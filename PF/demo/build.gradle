@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Starter Web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Boot Starter Data JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Spring Boot Starter Data MongoDB
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	// Spring Boot Starter Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	// MySQL Driver
+	runtimeOnly 'mysql:mysql-connector-java'
+
+	// Lombok (opcional)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Test Dependencies
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
